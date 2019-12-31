@@ -1,7 +1,16 @@
   {{ with .Site.Params.favicon}}
     <link rel="shortcut icon" href="{{ . }}" />
   {{ end }}
-
+  {{ if .Site.Params.MatomoContainer }}
+  <!-- Matomo Tag Manager -->
+  <script type="text/javascript">
+  var _mtm = _mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://analytics.tyeltech.com/js/container_{{ .Site.Params.MatomoContainer }}.js'; s.parentNode.insertBefore(g,s);
+  </script>
+  <!-- End Matomo Tag Manager -->
+  {{ end }}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
   <link rel="stylesheet" href="{{ "fontawesome/css/all.min.css" | absURL }}" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
